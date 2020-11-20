@@ -1,0 +1,57 @@
+<div class="p-4" data-bind="onLoad: () => $('#data-table').dataTable();">
+    <input type="text" class="form-control mb-2" data-bind="textInput: searchText" placeholder="Search..." />
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th data-bind="click: () => sortColumnBy('id')">Id</th>
+                <th data-bind="click: () => sortColumnBy('name')">Name</th>
+                <th>Gender</th>
+                <th data-bind="click: () => sortColumnBy('email')">Email</th>
+                <th data-bind="click: () => sortColumnBy('contact')">Contact</th>
+                <th>Known Technologies</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: filteredEmployees, visible: filteredEmployees().length > 0">
+            <!-- used component as component.name and not directly 
+                as an element because 'tbody' does not allow it -->
+            <tr data-bind="component: { name: 'employee-row', 
+                params: {
+                    employee: $data,
+                    editEmployeeData: $parent.toggleEditMode,
+                    updateEmployeeData: $parent.updateEmployeeData,
+                    removeEmployeeData: $parent.removeEmployeeData
+                }
+            }, click: $parent.openEmployeeView">
+            </tr>
+        </tbody>
+    </table>
+    <div class="text-center my-2" style="font-size: large;" data-bind="visible: filteredEmployees().length <= 0">No Data Available</div>
+
+    <div class="mt-5">
+        <h3 class="text-center">Data Table</h3>
+        <table id="data-table" class="table table-bordered table-stripted">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <th>Known Technologies</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: employees">
+                <tr>
+                    <td data-bind="text: id"></td>
+                    <td data-bind="text: name"></td>
+                    <td data-bind="text: gender"></td>
+                    <td data-bind="text: email"></td>
+                    <td data-bind="text: contact"></td>
+                    <td data-bind="text: knownTechnologies"></td>
+                </tr>
+            </tbody>
+        </table> 
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="w-100 p-3">
+    <h1 data-bind="text: employee.name"></h1>
+    <p><span data-bind="text: employee.email"></span> | <span data-bind="text: employee.contact"></span></p>
+
+    <h4>Known Technologies</h4>
+    <ul data-bind="foreach: { data: employee.knownTechnologies.split(', '), as: 'tech' }">
+        <li><span data-bind="text: tech"></span></li> 
+    </ul>
+</div>

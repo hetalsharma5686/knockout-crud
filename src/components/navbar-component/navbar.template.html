@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-sm bg-dark">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item m-2">
+        <a data-bind="path: '/'">Add</a>
+      </li>
+      <li class="nav-item m-2">
+        <a data-bind="path: '/users'">Display</a>
+      </li>
+      <li class="nav-item m-2">
+        <a data-bind="path: '/weather'">Weather</a>
+      </li>
+      <li class="nav-item m-2">
+        <a data-bind="path: '/login', visible: !$root.isAuthenticated()">Login</a>
+        <a data-bind="path: '/logout', visible: $root.isAuthenticated">Logout</a>
+      </li>
+    </ul>
+</nav>

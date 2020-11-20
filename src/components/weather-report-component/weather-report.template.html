@@ -1,0 +1,18 @@
+<div class="w-100 p-3">
+    <div class="d-flex justify-content-space-around align-items-center">
+        <select class="form-control mx-1" 
+            data-bind="options: countries,
+            value: selectedCountry,
+            optionsCaption: 'Choose Country'">
+        </select>
+        <select class="form-control mx-1" 
+            data-bind="options: cities,
+            value: selectedCity,
+            optionsCaption: 'Choose City',
+            disable: !selectedCountry()">
+        </select>
+    </div>
+    <div class="mt-2">
+        <p data-bind="visible: temperature() > 0">Current Temperature: <span data-bind="text: temperature"></span> K</p>
+    </div>
+</div>

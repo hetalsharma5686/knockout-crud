@@ -1,0 +1,26 @@
+<td>
+    <span data-bind="text: employee.id"></span>
+</td>
+<td>
+    <span data-bind="visible: !employee.isInEditMode(), text: employee.name"></span>
+    <input type="text" class="form-control" data-bind="visible: employee.isInEditMode, textInput: name, click: (data, event) => event.stopPropagation();" />
+</td>
+<td>
+    <span data-bind="text: employee.gender"></span>
+</td>
+<td>
+    <span data-bind="text: employee.email"></span>
+</td>
+<td>
+    <span data-bind="text: employee.contact"></span>
+</td>
+<td>
+    <span data-bind="text: employee.knownTechnologies"></span>
+</td>
+<td>
+    <button class="btn btn-primary btn-sm" data-bind="click: editData, visible: !employee.isInEditMode()">Edit</button>
+    <button class="btn btn-primary btn-sm" data-bind="click: updateData, visible: employee.isInEditMode">Update</button>
+</td>
+<td>
+    <button class="btn btn-danger btn-sm" data-bind="click: removeData">Delete</button>
+</td>
