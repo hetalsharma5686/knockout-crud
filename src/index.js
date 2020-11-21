@@ -1,5 +1,5 @@
 import ko from 'knockout';
-import { Router } from '@profiscience/knockout-contrib';
+import { Router } from '@profiscience/knockout-contrib-router';
 
 import AppComponent from './components/app-component';
 import NavbarComponent from './components/navbar-component';
