@@ -19,7 +19,7 @@ const isLoading = ko.observable(false);
 const isAuthenticated = ko.observable(false);
 
 Router.setConfig({
-    base: 'http://127.0.0.1:5501'
+    base: 'https://hetalsharma5686.github.io/knockout-crud'
 });
 
 Router
