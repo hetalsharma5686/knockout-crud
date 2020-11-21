@@ -1,5 +1,5 @@
 import ko from 'knockout';
-import { Router } from '@profiscience/knockout-contrib-router';
+import { Router } from '@profiscience/knockout-contrib';
 
 import AppComponent from './components/app-component';
 import NavbarComponent from './components/navbar-component';
@@ -18,9 +18,9 @@ import extenders from './extenders/extenders';
 const isLoading = ko.observable(false);
 const isAuthenticated = ko.observable(false);
 
-Router.setConfig({
-    base: 'https://hetalsharma5686.github.io/knockout-crud'
-});
+// Router.setConfig({
+//     base: 'http://127.0.0.1:5501'
+// });
 
 Router
 .use((ctx) => middleware.isUserAuthenticated(ctx, isAuthenticated))
