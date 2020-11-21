@@ -24,6 +24,7 @@
   "dependencies": {
     "@babel/runtime": "^7.12.5",
     "@profiscience/knockout-contrib": "^2.2.2",
+    "@profiscience/knockout-contrib-router": "^2.1.5",
     "knockout": "^3.5.1"
   }
 }
